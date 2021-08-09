@@ -10,7 +10,7 @@ SKProductSubscriptionPeriodWrapper _$SKProductSubscriptionPeriodWrapperFromJson(
     Map<String, dynamic> json) {
   return SKProductSubscriptionPeriodWrapper(
     numberOfUnits: json['numberOfUnits'] as int,
-    time: _$enumDecodeNullable(_$SKSubscriptionPeriodTimeEnumMap, json['time']),
+    unit: _$enumDecodeNullable(_$SKSubscriptionPeriodTimeEnumMap, json['unit']),
   );
 }
 
@@ -18,7 +18,7 @@ Map<String, dynamic> _$SKProductSubscriptionPeriodWrapperToJson(
         SKProductSubscriptionPeriodWrapper instance) =>
     <String, dynamic>{
       'numberOfUnits': instance.numberOfUnits,
-      'time': _$SKSubscriptionPeriodTimeEnumMap[instance.time],
+      'unit': _$SKSubscriptionPeriodTimeEnumMap[instance.unit],
     };
 
 T _$enumDecode<T>(
@@ -31,9 +31,7 @@ T _$enumDecode<T>(
         '${enumValues.values.join(', ')}');
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
+  final value = enumValues.entries.singleWhere((e) => e.value == source, orElse: () => null)?.key;
 
   if (value == null && unknownValue == null) {
     throw ArgumentError('`$source` is not one of the supported values: '
